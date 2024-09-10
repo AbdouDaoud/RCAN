@@ -107,7 +107,10 @@ class Trainer():
                     if self.args.save_results:
                         self.ckp.save_results(filename, save_list, scale)
 
-                self.ckp.log[-1, idx_scale] = eval_acc / len(self.loader_test)
+                if len(self.loader_test)>0:
+                    self.ckp.log[-1, idx_scale] = eval_acc / len(self.loader_test)
+                else:
+                    print("Le DataLoader de test est vide.")
                 best = self.ckp.log.max(0)
                 self.ckp.write_log(
                     '[{} x{}]\tPSNR: {:.3f} (Best: {:.3f} @epoch {})'.format(
