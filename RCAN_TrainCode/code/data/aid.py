@@ -37,7 +37,7 @@ class AID(srdata.SRData):
         self.apath = os.path.join(dir_data, '/mydataset')  # Assurez-vous que "AID" est le dossier de base de vos données
         self.dir_hr = os.path.join(self.apath, 'HR')  # Dossier contenant les images HR
         self.dir_lr = os.path.join(self.apath, 'LR')  # Dossier contenant les images LR
-        self.ext = '.png'  # Extension de vos fichiers (ajustez si ce n'est pas .png)
+        self.ext = '.jpg'  # Extension de vos fichiers (ajustez si ce n'est pas .png)
 
     def _name_hrbin(self):
         return os.path.join(
